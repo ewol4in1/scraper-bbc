@@ -14,4 +14,9 @@ titles = soup.find_all(
 title_list = []
 for title in titles:
     title_list.append(title.getText())
-    print(title_list)
+
+
+urls = soup.find_all('a', {'class': 'qa-heading-link lx-stream-post__header-link'})
+for url in urls:
+    print('https://www.bbc.com' + url.get('href'))
+
